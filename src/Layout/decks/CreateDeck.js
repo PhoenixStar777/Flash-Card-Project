@@ -11,16 +11,9 @@ function CreateDeck() {
 
     const [deckName, setDeckName] = useState("");
     const [deckDescription, setDeckDescription] = useState("");
-    const [decks, setDecks] = useState([]);
     const history = useHistory();
 
-    const getDecks = async () => {
-        const decks = await listDecks();
-        setDecks(decks);
-    }
-    useEffect(() => {
-        getDecks();
-    },[])
+    
 
     const handleDeckNameChange = (e) => {
         setDeckName(e.target.value);        
@@ -57,7 +50,7 @@ function CreateDeck() {
             </nav>
             <h1>Create Deck</h1>
             <div className="mb-3">
-                <label for="deckName" className="form-label">Name</label>
+                <label htmlFor="deckName" className="form-label">Name</label>
                 <input type="text" value={deckName} className="form-control" id="deckName" placeholder="Deck Name" onChange={handleDeckNameChange}/>
             </div>
             <div className="mb-3">
