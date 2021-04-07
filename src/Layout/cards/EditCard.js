@@ -22,6 +22,7 @@ function EditCard() {
   useEffect(() => {
     getDeck();
     getCard();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleOnChangeFront = (e) => {
