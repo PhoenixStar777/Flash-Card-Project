@@ -45,10 +45,12 @@ const handleOnCancel = () => {
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-house-door-fill" viewBox="0 0 20 20">
+              
+                <Link to="/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-house-door-fill" viewBox="0 0 20 20">
   							<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
 							</svg>
-                <Link to="/">Home</Link>
+                  Home</Link>
               </li>
               <li className="breadcrumb-item">
               <Link to={`/decks/${deckId}`}>{deck.name}</Link>
@@ -58,13 +60,13 @@ const handleOnCancel = () => {
               </li>
             </ol>
           </nav>
-          <div class="mb-3">
+          <div className="mb-3">
               <h2>Edit Deck</h2>
-            <label for="front" class="form-label">
+            <label htmlFor="front" className="form-label">
               Name
             </label>
             <textarea
-              class="form-control"
+              className="form-control"
               onChange={handleOnChangeName}
               value={name}
               id="name"
@@ -72,12 +74,12 @@ const handleOnCancel = () => {
               placeholder="Deck Name"
             ></textarea>
           </div>
-          <div class="mb-3">
-            <label for="back" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="back" className="form-label">
               Description
             </label>
             <textarea
-              class="form-control"
+              className="form-control"
               onChange={handleOnChangeDescription}
               value={description}
               id="description"

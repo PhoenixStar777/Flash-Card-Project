@@ -6,7 +6,7 @@ function CardList({cards, getDeck}) {
     <div className="mt-4">
       <h2>Cards</h2>
       {cards.map((card, i) => {
-          return <ReadCard card={card} getDeck={getDeck}/>
+          return <ReadCard key={i} card={card} getDeck={getDeck}/>
       })}
     </div>
   );

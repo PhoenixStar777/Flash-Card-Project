@@ -20,21 +20,19 @@ function Study() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(deck, "deck");
-
   const handleFlip = () => {
     setIsFlipped(!isFlipped); // true
   };
 
   const handleNext = () => {
-    
+
     if (currentCard === deck.cards.length - 1) {
-        if (window.confirm("Restart cards?\n\nClick 'cancel' to return to the home page.")){
-            setCurrentCard(0);            
-        }
-        history.push("/");        
+      if (window.confirm("Restart cards?\n\nClick 'cancel' to return to the home page.")) {
+        setCurrentCard(0);
+      }
+      history.push("/");
     } else {
-        setCurrentCard(currentCard + 1);
+      setCurrentCard(currentCard + 1);
     }
   };
 
@@ -46,9 +44,9 @@ function Study() {
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
                 <Link to="/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-house-door-fill" viewBox="0 0 20 20">
-  							<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
-							</svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-house-door-fill" viewBox="0 0 20 20">
+                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z" />
+                  </svg>
 
                   Home</Link>
               </li>
@@ -62,8 +60,8 @@ function Study() {
           </nav>
           <h1>Study: {deck.name}</h1>
           <div className="StudyCard1">
-  
-            {deck.cards.length > 2  ? <div className="card-body">
+
+            {deck.cards.length > 2 ? <div className="card-body">
               <h2 className="card-title">
                 Card {currentCard + 1} of {deck.cards.length} cards
               </h2>
@@ -90,7 +88,7 @@ function Study() {
               >
                 Next
               </button>}
-            </div> : <NotEnough deckId={deck.id}/>}
+            </div> : <NotEnough deckId={deck.id} />}
           </div>
         </>
       )}
