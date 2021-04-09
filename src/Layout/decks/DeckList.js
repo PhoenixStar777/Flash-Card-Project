@@ -13,8 +13,9 @@ function DeckList() {
         setDecks(decks);
     }
     useEffect(() => {
-        getDecks();
-    }, [])
+        getDecks(); 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []) 
 
     const handleCreateDeck = () => {
         history.push("/decks/new");
